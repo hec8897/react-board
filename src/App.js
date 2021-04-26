@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import HomeBody from './components/home/body'
+import UserBody from './components/user/body'
+import BoardBody from './components/board/body'
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <ul>
+            <li>
+              <Link to="/">home</Link>
+            </li>
+            <li>
+              <Link to="/users/main">user</Link>
+            </li>
+            <li>
+              <Link to="/board">board</Link>
+            </li>
+          </ul>
+          <nav>
+            <Switch>
+              <Route exact path="/" component={HomeBody} />
+              <Route path="/users/:id" component={UserBody} />
+              <Route path="/board" component={BoardBody} />
+            </Switch>
+          </nav>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
