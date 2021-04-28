@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import HomeBody from './components/home/body'
 import UserBody from './components/user/body'
 import BoardBody from './components/board/body'
+import './App.css'
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
 class App extends Component {
