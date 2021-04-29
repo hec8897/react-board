@@ -1,12 +1,28 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-const UserList = ({list}) =>{
+const style = {
+    
+    listStyle: {
+        color: "blue"
+    }
+}
 
-    const UserList = list.map((ele)=>{
-        return <li key={ele.id}><Link to={`/users/${ele.id}`}>{ele.name}</Link></li>
+
+
+const UserList = ({ list,UpdateCtrl }) => {
+    let history = useHistory();
+    
+    const UserList = list.map((ele) => {
+        return <li style={style.listStyle} key={ele.id}>
+                <a onClick={(e)=>{
+                    e.preventDefault();
+                    UpdateCtrl(ele.id)
+                    history.push(`/users/${ele.id}`)
+                }}>{ele.name}</a>
+                </li>
     })
-    return(
+    return (
         <ul>{UserList}</ul>
     )
 }

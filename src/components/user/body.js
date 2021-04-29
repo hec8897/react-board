@@ -1,31 +1,46 @@
 
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import UserList from './userList'
+import UserInfo from './userInfo'
 
 class HomeBody extends Component {
+
+
   constructor(...props) {
     super(...props);
     this.state = {
-      UserList:[
-        {id:0,name:'김다운', address:""},
-        {id:1,name:'김대현', address:""},
-        {id:2,name:'김영재', address:""},
-        {id:3,name:'박진성', address:""},
+      RouteData: null,
+      UserData: [
+        { id: 0, name: '김다운', address: "인천" },
+        { id: 1, name: '김대현', address: "강동" },
+        { id: 2, name: '김영재', address: "응암" },
+        { id: 3, name: '박진성', address: "광진" },
       ]
     }
+  };
+
+  id = this.props.match.params.id
+
+
+  updateRouter = async (id) => {
+    const { UserData } = this.state
+    await this.setState({
+      RouteData: UserData.filter((ele) => {
+        return ele.id === id
+      })
+    })
   }
+
   render() {
     const { id } = this.props.match.params
-    console.log(id)
-    console.log(this.props)
+    const { UserData, RouteData } = this.state
     return (
       <div>
-        <Link to="/users/1">링크 1</Link>
         {
           <Route path="/users/:id">
-            <UserList list={this.state.UserList}/>
-            {id !== "main" ? <h1>id: {id}</h1> : <h1>User Main</h1>}
+            <UserList list={UserData} UpdateCtrl={this.updateRouter} />
+            {id !== "main" ? <UserInfo User={RouteData}/>: ""}
           </Route>
         }
       </div>
