@@ -1,33 +1,22 @@
 import React, { Component } from "react";
+import AppNav from './components/common/nav'
 import HomeBody from './components/home/body'
 import UserBody from './components/user/body'
 import BoardBody from './components/board/body'
 import './App.css'
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <ul>
-            <li>
-              <Link to="/">home</Link>
-            </li>
-            <li>
-              <Link to="/users/main">user</Link>
-            </li>
-            <li>
-              <Link to="/board">board</Link>
-            </li>
-          </ul>
-          <nav>
+          <AppNav />
             <Switch>
               <Route exact path="/" component={HomeBody} />
               <Route path="/users/:id" component={UserBody} />
               <Route path="/board" component={BoardBody} />
             </Switch>
-          </nav>
         </div>
       </BrowserRouter>
     );

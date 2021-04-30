@@ -2,25 +2,25 @@ import React from 'react'
 import { useHistory } from "react-router-dom";
 
 const style = {
-    
+
     listStyle: {
-        color: "blue"
+        cursor:"pointer"
     }
 }
 
 
 
-const UserList = ({ list,UpdateCtrl }) => {
-    let history = useHistory();
-    
+const UserList = ({ list, UpdateCtrl }) => {
+    const history = useHistory();
+
     const UserList = list.map((ele) => {
         return <li style={style.listStyle} key={ele.id}>
-                <a onClick={(e)=>{
-                    e.preventDefault();
-                    UpdateCtrl(ele.id)
-                    history.push(`/users/${ele.id}`)
-                }}>{ele.name}</a>
-                </li>
+            <p onClick={(e) => {
+                e.preventDefault();
+                UpdateCtrl(ele.id)
+                history.push(`/users/${ele.id}`)
+            }}>{ele.name}</p>
+        </li>
     })
     return (
         <ul>{UserList}</ul>

@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import UserList from './userList'
 import UserInfo from './userInfo'
 
+
 class HomeBody extends Component {
 
 
@@ -32,13 +33,20 @@ class HomeBody extends Component {
     })
   }
 
+
   render() {
-    const { id } = this.props.match.params
-    const { UserData, RouteData } = this.state
+
+    const { id } = this.props.match.params;
+    const { UserData, RouteData } = this.state;
+
+    // if(!RouteData){
+    //   history.push('/users/')
+    // }
     return (
       <div>
         {
           <Route path="/users/:id">
+            <h1>유저 리스트</h1>
             <UserList list={UserData} UpdateCtrl={this.updateRouter} />
             {id !== "main" ? <UserInfo User={RouteData}/>: ""}
           </Route>
