@@ -1,0 +1,18 @@
+.lnb{
+    background: #fff;
+    ul{
+        display: flex;
+        margin: 0;
+        padding: 15px;
+        border-bottom: 1px solid #d2d2d2;
+        li{
+            margin: 0 10px;
+        }
+    }
+}
+
+.contents{
+    display: flex;
+    &>div{
+    }
+}

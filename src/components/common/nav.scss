@@ -1,29 +1,42 @@
 nav{
-    background-color: #444;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px; 
-    justify-content: space-between;
-    margin-bottom: 20px;
+    background-color: #fff;
+    &>div{
+         border-radius: 0px 20px 20px 0px;
+        height: 100%;
+        padding: 20px; 
+        background-color: #32546d;
+        box-sizing: border-box;
+    }
     h1{
         font-weight: bold;
         cursor: pointer;
+        margin-bottom: 30px;
+        svg{
+            vertical-align: middle;
+        }
+
         a{
-            color: #fff;
-            position: relative;
-            transition: .1s ease-in;
-            &:hover{
-                color: darkcyan;
-            }
+            border-radius: 10px;
+            padding: 5px;
         }
     }
     ul{
-        display: flex;
+        padding: 0;
+        text-align: center;
         li{
             list-style-type: none;
-            margin: 0 20px;
-            color: #fff;
             cursor: pointer;
+            margin: 15px 0;
+            a{
+                border-radius: 10px;
+                padding: 5px;
+            }
+            &.active{
+                background: gray;
+            }
+            svg{
+                vertical-align: middle;
+            }
             &:hover{
                 color: darkcyan;
             }

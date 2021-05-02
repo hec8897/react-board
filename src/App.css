@@ -52,3 +52,13 @@ table {
 a{
 	text-decoration: none;
 }
+
+div.App{
+	display: flex;
+	min-height: 100vh;
+	background-color: #f8eeed;
+}
+div.body{
+	flex: 4;
+	overflow: auto;
+}

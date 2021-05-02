@@ -1,24 +1,37 @@
 import React from "react";
 import './nav.scss'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { HouseFill, PersonBadge, CardText, GearFill } from 'react-bootstrap-icons';
 
 const AppNav = () => {
     return (
         <nav>
-            <h1><Link to="/">USER ADMIN</Link></h1>
+            <div>
 
-            <ul>
-                <li>
-                    <Link to="/users/main">USER</Link>
-                </li>
-                <li>
-                    <Link to="/board">BOARD</Link>
-                </li>
-                <li>
-                    {/* <Link to="/board">BOARD</Link> */}
-                    SETTING
-                </li>
-            </ul>
+                <h1>
+                    <NavLink to="/" activeStyle={{ background: '#,,80a7b8' }} exact>
+                        <HouseFill color="#fff" size={20} />
+                    </NavLink>
+                </h1>
+                <ul>
+                    <li>
+                        <NavLink to="/users/main" activeStyle={{ background: '#80a7b8' }} >
+                            <PersonBadge color="#fff" size={20} />
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/board" activeStyle={{ background: '#80a7b8' }}  >
+                            <CardText color="#fff" size={20} />
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/" >
+                            <GearFill color="#fff" size={20} />
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+
         </nav>
     )
 }

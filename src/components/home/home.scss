@@ -1,0 +1,13 @@
+.home-component{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    flex: 1;
+    div.contents{
+        display: flex;
+        flex: 1;
+    }
+    div.local-nav{
+        background-color: #fff;
+    }
+}
