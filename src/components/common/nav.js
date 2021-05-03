@@ -13,7 +13,7 @@ const AppNav = () => {
                         <HouseFill color="#fff" size={20} />
                     </NavLink>
                 </h1>
-                <ul>
+                <ul className='group'>
                     <li>
                         <NavLink to="/users/main" activeStyle={{ background: '#80a7b8' }} >
                             <PersonBadge color="#fff" size={20} />
@@ -21,6 +21,23 @@ const AppNav = () => {
                     </li>
                     <li>
                         <NavLink to="/board" activeStyle={{ background: '#80a7b8' }}  >
+                            <CardText color="#fff" size={20} />
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/" >
+                            <GearFill color="#fff" size={20} />
+                        </NavLink>
+                    </li>
+                </ul>
+                <ul> 
+                    <li>
+                        <NavLink to="/" >
+                            <PersonBadge color="#fff" size={20} />
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/" >
                             <CardText color="#fff" size={20} />
                         </NavLink>
                     </li>

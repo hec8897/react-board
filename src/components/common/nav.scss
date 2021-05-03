@@ -1,7 +1,9 @@
 nav{
     background-color: #fff;
+    position: fixed;
+    height: 100vh;
     &>div{
-         border-radius: 0px 20px 20px 0px;
+        //  border-radius: 0px 20px 20px 0px;
         height: 100%;
         padding: 20px; 
         background-color: #32546d;
@@ -23,6 +25,10 @@ nav{
     ul{
         padding: 0;
         text-align: center;
+        border-bottom: 1px solid #fff;
+        &.group{
+            border-top: 1px solid #fff;
+        }
         li{
             list-style-type: none;
             cursor: pointer;

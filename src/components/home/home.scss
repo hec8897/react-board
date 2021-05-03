@@ -3,11 +3,18 @@
     height: 100%;
     flex-direction: column;
     flex: 1;
-    div.contents{
-        display: flex;
+    margin-left: 50px;
+    div.contents-head{
+        padding: 50px;
         flex: 1;
+        background-color: #fafafa;
+        h1{
+            font-size: 24px;
+        }
     }
-    div.local-nav{
-        background-color: #fff;
+    div.content-body{
+        flex: 2;
+        padding: 50px;
+
     }
 }
